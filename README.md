@@ -1,54 +1,70 @@
-# React + TypeScript + Vite
+# Crypto Price Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive real-time cryptocurrency price tracker built with **React**, **Redux Toolkit**, and **TypeScript**. The app simulates WebSocket-like updates every 1.5 seconds and displays five major cryptocurrencies with real-time metrics like price, 24h volume, and percentage changes.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔧 Setup Instructions
 
-## Expanding the ESLint configuration
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/vedantnaik1008/crypto-price-tracker.git
+   cd crypto-price-tracker
+   ```
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+2. **Install dependencies:**
+   ```bash
+   npm install
+   # or
+   yarn
+   ```
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+4. **View in browser:**
+   Open [http://localhost:5173](http://localhost:5173)
+
+---
+
+## 🛠 Tech Stack & Architecture
+
+### Frontend:
+- **React**: UI framework
+- **Redux Toolkit**: State management
+- **TypeScript**: Type safety
+- **Vite**: Lightning-fast build tool
+
+### File Structure:
+```
+├── src/
+│   ├── assets.ts          # Initial static data
+│   ├── components/
+│   │   └── CryptoTable.tsx
+│   ├── store/
+│   │   ├── assetSlice.ts  # Reducer for live updates
+│   │   └── index.ts       # Store configuration
+│   ├── types/
+│   │   └── Asset.ts       # Asset type definition
+│   ├── utils/
+│   │   └── generateRandomChange.ts
+│   ├── App.tsx
+│   └── main.tsx
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Key Features:
+- Simulated real-time updates using `setInterval`
+- Asset sorting and filtering
+- Persistent localStorage caching
+- Responsive design
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## 📽 Demo
+
+![click here for video](https://www.loom.com/share/21e83dc765e647b098d23cc4cc7f6aee?sid=370172d3-861b-42ed-a4f1-e044dd616998)
+

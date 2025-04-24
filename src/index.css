@@ -1,0 +1,66 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+color-scheme: dark light;
+}
+
+body {
+min-height: 100vh;
+}
+
+img, svg, picture, video {
+  display: block;
+  max-width: 100%;
+}
+
+
+.table-container {
+  overflow-x: auto;
+  padding: 1rem;
+}
+
+.search-bar {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+  max-width: 300px;
+  font-size: 1rem;
+}
+
+.sort-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 0.5rem;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
